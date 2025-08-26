@@ -5,32 +5,27 @@ import { motion } from 'framer-motion';
 
 const units = [
   {
-    name: 'Tari Tradisional',
+    name: 'Kesenian Daerah Sunda',
     description: 'Mengembangkan dan melestarikan seni tari tradisional Indonesia dengan kreasi kontemporer.',
     icon: '🕺',
   },
   {
-    name: 'Teater',
+    name: 'Teater & Sastra',
     description: 'Wadah berekspresi melalui seni peran dengan berbagai pementasan teater modern dan tradisional.',
     icon: '🎭',
   },
   {
-    name: 'Musik Tradisional',
+    name: 'Paduan Suara & Musik',
     description: 'Menggali dan mengembangkan musik tradisional dengan sentuhan modern yang inovatif.',
     icon: '🎵',
   },
   {
-    name: 'Paduan Suara',
+    name: 'Tari Kreasi',
     description: 'Mengasah vokal dan harmoni dalam paduan suara dengan berbagai repertoar musik.',
     icon: '🎤',
   },
   {
-    name: 'Seni Rupa',
-    description: 'Eksplorasi kreativitas melalui berbagai media seni rupa seperti lukis, patung, dan digital art.',
-    icon: '🎨',
-  },
-  {
-    name: 'Fotografi & Film',
+    name: 'Fotografi',
     description: 'Belajar teknik fotografi dan pembuatan film dari dasar hingga produksi.',
     icon: '🎬',
   },
@@ -52,44 +47,58 @@ export default function UnitSection() {
   return (
     <section id="unit" className="py-20 bg-gray-50">
       <Container>
-        <div className="px-8 md:px-12">
+        <div className="px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Unit Kegiatan Kami</h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              Temukan unit kegiatan seni yang sesuai dengan minat dan bakat Anda.
-            </p>
-          </div>
-          
-          <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:max-w-none">
-            {units.map((unit, index) => (
-              <motion.div
-                key={unit.name}
-                className="flex flex-col rounded-2xl bg-white p-8 shadow-lg ring-1 ring-gray-900/5 transition-all hover:shadow-xl"
-                variants={fadeIn}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                custom={index}
-              >
-                <div className="text-4xl mb-4">{unit.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-900">{unit.name}</h3>
-                <p className="mt-2 text-gray-600">{unit.description}</p>
-              </motion.div>
-            ))}
-          </div>
-          
-          <div className="mt-12 text-center">
-            <a
-              href="#"
-              className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
-            >
-              Lihat semua unit kegiatan
-              <svg className="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-            </a>
-          </div>
+            <div className="mx-auto max-w-3xl text-center">
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Unit Kegiatan Kami</h2>
+              <p className="mt-4 text-lg leading-8 text-gray-600">
+              Lingkung Seni Mahasiswa memilik 5 unit kesenian, sebagai berikut:
+              </p>
+            </div>
+            
+            <div className="mx-auto mt-16 max-w-5xl space-y-8">
+              {/* First Row - 3 Units */}
+              <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
+                {units.slice(0, 3).map((unit, index) => (
+                  <motion.div
+                    key={unit.name}
+                    className="flex flex-col items-center text-center rounded-2xl bg-white p-6 shadow-sm hover:shadow-md transition-shadow duration-200 border border-gray-100 h-full"
+                    variants={fadeIn}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    custom={index}
+                  >
+                    <div className="flex items-center justify-center w-16 h-16 rounded-full bg-lisma/10 text-lisma text-2xl mb-4">
+                      {unit.icon}
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900">{unit.name}</h3>
+                    <p className="mt-2 text-sm text-gray-600">{unit.description}</p>
+                  </motion.div>
+                ))}
+              </div>
+              
+              {/* Second Row - 2 Units (centered) */}
+              <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:max-w-2xl sm:mx-auto">
+              {units.slice(3).map((unit, index) => (
+                <motion.div
+                  key={unit.name}
+                  className="flex flex-col items-center text-center rounded-2xl bg-white p-6 shadow-sm hover:shadow-md transition-shadow duration-200 border border-gray-100 h-full"
+                  variants={fadeIn}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  custom={index + 3}
+                >
+                  <div className="flex items-center justify-center w-16 h-16 rounded-full bg-lisma/10 text-lisma text-2xl mb-4">
+                    {unit.icon}
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900">{unit.name}</h3>
+                  <p className="mt-2 text-sm text-gray-600">{unit.description}</p>
+                </motion.div>
+              ))}
+              </div>
+            </div>
           </div>
         </div>
       </Container>

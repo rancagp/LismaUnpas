@@ -3,72 +3,154 @@ import Image from 'next/image';
 
 const team = [
   {
-    name: 'Ahmad Fauzi',
-    role: 'Ketua Umum',
-    image: '/images/team/ahmad-fauzi.jpg',
-  },
-  {
-    name: 'Siti Rahayu',
-    role: 'Wakil Ketua',
-    image: '/images/team/siti-rahayu.jpg',
-  },
-  {
     name: 'Budi Santoso',
-    role: 'Sekretaris',
+    role: 'Ketua Umum',
     image: '/images/team/budi-santoso.jpg',
   },
   {
     name: 'Dewi Lestari',
-    role: 'Bendahara',
+    role: 'Sekretaris Umum',
     image: '/images/team/dewi-lestari.jpg',
+  },
+  {
+    name: 'Ahmad Fauzi',
+    role: 'Bendahara Umum',
+    image: '/images/team/ahmad-fauzi.jpg',
+  },
+  {
+    name: 'Siti Rahayu',
+    role: 'Ketua 1',
+    image: '/images/team/siti-rahayu.jpg',
+  },
+  {
+    name: 'Budi Santoso',
+    role: 'Ketua 2',
+    image: '/images/team/budi-santoso.jpg',
+  },
+  {
+    name: 'Dewi Lestari',
+    role: 'Ketua 3',
+    image: '/images/team/dewi-lestari.jpg',
+  },
+  {
+    name: 'Ahmad Fauzi',
+    role: 'Koordinator Tesas',
+    image: '/images/team/ahmad-fauzi.jpg',
+  },
+  {
+    name: 'Siti Rahayu',
+    role: 'Wakil Koordinator Tesas',
+    image: '/images/team/siti-rahayu.jpg',
+  },
+  {
+    name: 'Budi Santoso',
+    role: 'Koordinator KDS',
+    image: '/images/team/budi-santoso.jpg',
+  },
+  {
+    name: 'Dewi Lestari',
+    role: 'Wakil Koordinator KDS',
+    image: '/images/team/dewi-lestari.jpg',
+  },
+  {
+    name: 'Ahmad Fauzi',
+    role: 'Koordinator PSM',
+    image: '/images/team/ahmad-fauzi.jpg',
+  },
+  {
+    name: 'Siti Rahayu',
+    role: 'Wakil Koordinator Psm',
+    image: '/images/team/siti-rahayu.jpg',
+  },
+  {
+    name: 'Budi Santoso',
+    role: 'Koordinator Takre',
+    image: '/images/team/budi-santoso.jpg',
+  },
+  {
+    name: 'Dewi Lestari',
+    role: 'Koordinator FG',
+    image: '/images/team/dewi-lestari.jpg',
+  },
+  {
+    name: 'Dewi Lestari',
+    role: 'Sarana Prasarana',
+    image: '/images/team/dewi-lestari.jpg',
+  },
+  {
+    name: 'Ahmad Fauzi',
+    role: 'Digital Content',
+    image: '/images/team/ahmad-fauzi.jpg',
+  },
+  {
+    name: 'Siti Rahayu',
+    role: 'Humas Internal',
+    image: '/images/team/siti-rahayu.jpg',
+  },
+  {
+    name: 'Budi Santoso',
+    role: 'Humas Eksternal',
+    image: '/images/team/budi-santoso.jpg',
   },
 ];
 
 export default function TeamSection() {
   return (
     <section id="tim" className="py-20 bg-white">
-      <Container>
-        <div className="px-8 md:px-12">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <Container className="px-8 md:px-12">
+        <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Tim Kami</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Dewan Pengurus Harian</h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Berikut adalah tim inti yang mengelola kegiatan LISMA.
+              Dewan Pengurus Harian LISMA 2025/2026.
             </p>
           </div>
           
-          <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-4 lg:max-w-none">
-            {team.map((person) => (
-              <div key={person.name} className="flex flex-col items-center">
-                <div className="relative h-48 w-48 overflow-hidden rounded-full bg-gray-100">
-                  <Image
-                    src={person.image}
-                    alt={person.name}
-                    width={192}
-                    height={192}
-                    className="h-full w-full object-cover"
-                  />
+          <div className="mx-auto mt-16">
+            {/* First 16 members in 4x4 grid */}
+            <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-4">
+              {team.slice(0, 16).map((person, index) => (
+                <div key={`${person.name}-${person.role}-${index}`} className="flex flex-col items-center">
+                  <div className="relative h-48 w-48 overflow-hidden rounded-full bg-gray-100">
+                    <Image
+                      src={person.image}
+                      alt={person.name}
+                      width={192}
+                      height={192}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                  <h3 className="mt-6 text-lg font-semibold leading-8 tracking-tight text-gray-900">
+                    {person.name}
+                  </h3>
+                  <p className="text-base leading-7 text-blue-600">{person.role}</p>
                 </div>
-                <h3 className="mt-6 text-lg font-semibold leading-8 tracking-tight text-gray-900">
-                  {person.name}
-                </h3>
-                <p className="text-base leading-7 text-blue-600">{person.role}</p>
-              </div>
-            ))}
+              ))}
+            </div>
+            
+            {/* Last 2 members centered */}
+            <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-16">
+              <div className="hidden sm:block"></div> {/* Empty div for spacing */}
+              {team.slice(16).map((person, index) => (
+                <div key={`${person.name}-${person.role}-${index + 16}`} className="flex flex-col items-center">
+                  <div className="relative h-48 w-48 overflow-hidden rounded-full bg-gray-100">
+                    <Image
+                      src={person.image}
+                      alt={person.name}
+                      width={192}
+                      height={192}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                  <h3 className="mt-6 text-lg font-semibold leading-8 tracking-tight text-gray-900">
+                    {person.name}
+                  </h3>
+                  <p className="text-base leading-7 text-blue-600">{person.role}</p>
+                </div>
+              ))}
+              <div className="hidden sm:block"></div> {/* Empty div for spacing */}
+            </div>
           </div>
-          
-          <div className="mt-12 text-center">
-            <a
-              href="#"
-              className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
-            >
-              Lihat seluruh pengurus
-              <svg className="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-            </a>
-          </div>
-        </div>
         </div>
       </Container>
     </section>

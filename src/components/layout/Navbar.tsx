@@ -80,7 +80,7 @@ export default function Navbar() {
           <nav className="hidden md:flex items-center space-x-12">
             <Link 
               href="/#tentang" 
-              className={`text-[15px] font-semibold transition-colors hover:text-lisma ${
+              className={`text-[18px] font-semibold transition-colors hover:text-lisma ${
                 scrolled ? 'text-lisma-text' : 'text-lisma-text'
               }`}
             >
@@ -88,7 +88,7 @@ export default function Navbar() {
             </Link>
             <Link 
               href="/#unit" 
-              className={`text-[15px] font-semibold transition-colors hover:text-lisma ${
+              className={`text-[18px] font-semibold transition-colors hover:text-lisma ${
                 scrolled ? 'text-lisma-text' : 'text-lisma-text'
               }`}
             >
@@ -96,7 +96,7 @@ export default function Navbar() {
             </Link>
             <Link 
               href="/#tim" 
-              className={`text-[15px] font-semibold transition-colors hover:text-lisma ${
+              className={`text-[18px] font-semibold transition-colors hover:text-lisma ${
                 scrolled ? 'text-lisma-text' : 'text-lisma-text'
               }`}
             >
@@ -104,7 +104,7 @@ export default function Navbar() {
             </Link>
             <Link 
               href="/#faq" 
-              className={`text-[15px] font-semibold transition-colors hover:text-lisma ${
+              className={`text-[18px] font-semibold transition-colors hover:text-lisma ${
                 scrolled ? 'text-lisma-text' : 'text-lisma-text'
               }`}
             >

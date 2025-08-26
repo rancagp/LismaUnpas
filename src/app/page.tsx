@@ -12,8 +12,8 @@ export default function Home() {
       <AboutUs />
       <UnitSection />
       <TeamSection />
-      <QuestionSection />
       <PendaftaranSection />
+      <QuestionSection />
     </div>
   );
 }
